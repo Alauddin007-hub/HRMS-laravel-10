@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('image')->nullable();
-            $table->bigInteger('role_types_id')->nullable()->constrained();
+            $table->bigInteger('role_types_id')->nullable();
             $table->boolean('status')->default(0);
             $table->rememberToken();
             $table->timestamps();

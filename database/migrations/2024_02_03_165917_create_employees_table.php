@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid')->nullable();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
             $table->string('phone')->nullable();
-            $table->bigInteger('department_id')->nullable()->constrained();
-            $table->bigInteger('designation_id')->nullable()->constrained();
+            $table->bigInteger('department_id')->nullable();
+            $table->bigInteger('designation_id')->nullable();
+            $table->boolean('satus')->nullable();
             $table->string('company')->nullable();
             $table->string('image')->nullable();
             $table->softDeletes();

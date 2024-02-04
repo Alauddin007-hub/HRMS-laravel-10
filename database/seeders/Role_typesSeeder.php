@@ -16,7 +16,7 @@ class Role_typesSeeder extends Seeder
         DB::table('role_types')->insert([
             'type' => "Admin",
         ]);
-        DB::table('users')->insert([
+        DB::table('role_types')->insert([
             'type' => "Editor",
         ]);
     }
