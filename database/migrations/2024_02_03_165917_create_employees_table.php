@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('email');
             $table->string('phone')->nullable();
-            $table->foreignId('department_id')->nullable()->constrained();
-            $table->foreignId('designation_id')->nullable()->constrained();
+            $table->bigInteger('department_id')->nullable()->constrained();
+            $table->bigInteger('designation_id')->nullable()->constrained();
             $table->string('company')->nullable();
             $table->string('image')->nullable();
             $table->softDeletes();
