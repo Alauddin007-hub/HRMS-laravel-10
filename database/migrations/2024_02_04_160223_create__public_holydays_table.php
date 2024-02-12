@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_public_holydays', function (Blueprint $table) {
+        Schema::create('public_holydays', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->date('date');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_public_holydays');
+        Schema::dropIfExists('public_holydays');
     }
 };

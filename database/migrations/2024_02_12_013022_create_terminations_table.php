@@ -9,12 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void 
     {
-        Schema::create('weekly_holydays', function (Blueprint $table) {
+        Schema::create('terminations', function (Blueprint $table) {
             $table->id();
             $table->integer('employee_id');
-            $table->string('off_days');
+            $table->string('termination_type');
+            $table->string('subject');
+            $table->integer('role_type_id')->nullable();
+            $table->date('notice_date');
+            $table->date('terminated_date');
+            $table->string('discription')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
@@ -25,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('weekly_holydays');
+        Schema::dropIfExists('terminations');
     }
 };

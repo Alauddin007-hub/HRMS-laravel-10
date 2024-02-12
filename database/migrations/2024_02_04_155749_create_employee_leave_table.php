@@ -11,11 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employee_leave', function (Blueprint $table) {
+        Schema::create('employee_leaves', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('leave_type_id');
+            $table->tinyInteger('employee_id');
+            $table->date('from')->nullable();
+            $table->date('to')->nullable();
+            $table->string('total_leave')->nullable();
+            $table->string('reason')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
+
+    // 
+    //     'from','to','reason','status',
 
     /**
      * Reverse the migrations.

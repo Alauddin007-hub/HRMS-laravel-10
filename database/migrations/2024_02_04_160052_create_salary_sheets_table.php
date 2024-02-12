@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('salary_sheets', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('employee_id');
+            $table->integer('basic')->nullable();
+            $table->integer('dine_allowance')->nullable();
+            $table->integer('conveneynce_allowance')->nullable();
+            $table->integer('madical_allowance')->nullable();
+            $table->integer('rent_allowance')->nullable();
+            $table->integer('net_salary')->nullable();
+            $table->integer('created_by')->nullable();
             $table->timestamps();
         });
     }

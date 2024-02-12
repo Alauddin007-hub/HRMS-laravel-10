@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employee_advance_payments', function (Blueprint $table) {
+        Schema::create('warnings', function (Blueprint $table) {
             $table->id();
             $table->tinyInteger('employee_id');
-            $table->integer('loan');
-            $table->string('approval_amount')->nullable();
-            $table->boolean('status')->default(0);
+            $table->string('warning_type')->nullable();
+            $table->string('subject')->nullable();
+            $table->tinyInteger('warning_by')->nullable();
+            $table->date('warning_date')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employee_advance_payments');
+        Schema::dropIfExists('warnings');
     }
 };

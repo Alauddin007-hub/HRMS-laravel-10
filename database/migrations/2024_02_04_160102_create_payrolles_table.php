@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('payrolles', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('employee_id');
+            $table->tinyInteger('salary_sheets_id');
+            $table->integer('advance')->nullable();
+            $table->integer('pf')->nullable();
+            $table->integer('leave')->nullable();
+            $table->integer('prof_tax')->nullable();
+            $table->integer('leabour_welfare')->nullable();
+            $table->integer('created_by')->nullable();
             $table->timestamps();
         });
     }

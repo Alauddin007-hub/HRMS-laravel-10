@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('employee_overtimes', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('employee_id');
+            $table->tinyInteger('attendance_id');
+            $table->tinyInteger('salary_sheet_id');
+            $table->integer('per_hour_salary');
+            $table->integer('total_amount');
             $table->timestamps();
         });
     }

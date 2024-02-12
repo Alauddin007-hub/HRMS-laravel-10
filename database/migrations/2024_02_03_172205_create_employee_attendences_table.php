@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('employee_attendences', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('employee_id')->nullable();
+            $table->tinyInteger('employee_id');
             $table->string('checkin')->nullable();
             $table->string('checkout')->nullable();
             $table->date('date')->nullable();

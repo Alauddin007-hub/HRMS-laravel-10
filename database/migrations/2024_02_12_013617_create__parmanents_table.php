@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leave_types', function (Blueprint $table) {
+        Schema::create('parmanents', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('day');
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('leave_types');
+        Schema::dropIfExists('parmanents');
     }
 };
