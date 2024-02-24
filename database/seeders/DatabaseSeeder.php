@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(EmployeeSeeder::class);
+        // $this->call(EmployeeSeeder::class);
         $this->call(Role_typesSeeder::class);
-        $this->call(UserSeeder::class);
+        // $this->call(UserSeeder::class);
         // $this->call(TeamSeeder::class);
         // $this->call(TestimonialSeeder::class);
         
